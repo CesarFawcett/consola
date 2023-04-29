@@ -9,20 +9,22 @@ public class adivina {
         char letraAleatoria = letras[rand.nextInt(letras.length)];
         boolean adivinado = false;
         Scanner scanner = new Scanner(System.in);
+        int cont = 1;
 
         System.out.println("¡Bienvenido a Adivina la Letra!");
-        System.out.println("Estoy pensando en una letra de las vocales. ¡Adivina cuál es!");
+        System.out.println("Estoy pensando en una letra vocal. ¡Adivina cuál es!, tienes 3 intentos :D");
 
-        while (!adivinado) {
+        while (!adivinado && cont!=4) {
             char letra = scanner.next().charAt(0);
             if (letra == letraAleatoria) {
                 System.out.println("¡Adivinaste!");
                 adivinado = true;
             } else {
-                System.out.println("Incorrecto. Intenta de nuevo.");
+                System.out.println("Incorrecto. Intenta de nuesvo.");
+                cont = cont + 1;
             }
         }
-
+        System.out.println("La vocal era : "+letraAleatoria);
         scanner.close();
     }
 }
